@@ -1,32 +1,32 @@
-# Jarvis Stark — Local Voice and Assistant Panel
+# Jarvis Stark — Painel local de voz e assistente
 
-A lightweight local assistant bridge with a browser panel, optional speech output, and a local Ollama model. The prototype is designed to listen and respond on the same machine.
+Ponte leve para um assistente local, com painel no navegador, fala opcional e um modelo Ollama executado na própria máquina. O protótipo foi pensado para ouvir e responder localmente.
 
-## Features
+## Funcionalidades
 
-- Python HTTP server with a small HTML control panel.
-- Local Ollama generation through `127.0.0.1:11434`.
-- Optional speech synthesis using Kokoro, with an espeak-ng fallback.
-- Optional web search for queries that explicitly need current information.
-- State and status endpoints for the local panel.
-- Binds to `127.0.0.1:8765` rather than exposing the panel to the LAN.
+- Servidor HTTP em Python com um painel HTML.
+- Geração local com Ollama em `127.0.0.1:11434`.
+- Síntese de voz opcional com Kokoro e alternativa por espeak-ng.
+- Pesquisa web opcional para perguntas que precisam de informações atuais.
+- Endpoints locais de estado e controle.
+- Escuta em `127.0.0.1:8765`, sem expor o painel à rede local.
 
-## Run
+## Executar
 
-Requirements: Python 3.10+ and a local Ollama service with a compatible model. Optional speech/search capabilities need their corresponding local Python packages and system programs.
+Requisitos: Python 3.10+ e Ollama local com um modelo compatível. Recursos opcionais de voz e pesquisa exigem os respectivos pacotes Python e programas do sistema.
 
 ```bash
 python3 jarvis_bridge.py
 ```
 
-Open http://127.0.0.1:8765 on the same computer.
+Abra http://127.0.0.1:8765 no próprio computador.
 
-Configuration is available through environment variables such as `JARVIS_MODEL` and `JARVIS_CLAP_THRESH`. Never commit local credentials or private model assets.
+A configuração pode ser feita por variáveis de ambiente como `JARVIS_MODEL` e `JARVIS_CLAP_THRESH`. Não envie credenciais locais nem arquivos privados de modelos ao Git.
 
-## Project status
+## Estado do projeto
 
-This is a local prototype. Model availability, speech packages, audio devices, and network search determine which optional features work on a particular machine. The optional intro audio is a user-supplied local asset and is not included in this repository.
+É um protótipo local. A disponibilidade do modelo, pacotes de voz, dispositivos de áudio e pesquisa em rede determina quais recursos opcionais funcionam em cada máquina. O áudio de abertura opcional deve ser fornecido localmente pelo usuário e não está incluído neste repositório.
 
 ---
 
-[English](./README.en.md) · [Español](./README.es.md)
+[Português](./README.md) · [English](./README.en.md) · [Español](./README.es.md)
